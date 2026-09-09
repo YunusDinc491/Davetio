@@ -1,0 +1,1693 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Baloo+2:wght@500;600;700&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@1,600;1,700&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --pink-50: #fff5f8;
+  --pink-100: #ffe3ec;
+  --pink-200: #ffc7dc;
+  --pink-300: #ffa2c4;
+  --pink-400: #ff7bab;
+  --pink-500: #ff5c98;
+  --pink-600: #f23f80;
+  --pink-700: #d12868;
+  --ink: #4a2438;
+  --ink-soft: #8a5c74;
+  --white: #ffffff;
+  --shadow-soft: 0 8px 24px rgba(242, 63, 128, 0.15);
+  --shadow-btn: 0 6px 16px rgba(255, 92, 152, 0.35);
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --font-heading: 'Baloo 2', 'Quicksand', sans-serif;
+  --font-body: 'Quicksand', sans-serif;
+  --font-script: 'Dancing Script', cursive;
+  --hero-font-body: 'Poppins', 'Quicksand', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--pink-50) 0%, #fff 60%);
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+p {
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--pink-600);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+}
+
+.topbar .brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--pink-600);
+  text-decoration: none;
+}
+
+.topbar nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.page-wide {
+  flex: 1;
+  padding: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 36px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.card-wide {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 32px;
+}
+
+.field {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.field input {
+  border: 2px solid var(--pink-100);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+  background: var(--pink-50);
+  color: var(--ink);
+}
+
+.field input:focus {
+  border-color: var(--pink-400);
+}
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 13px 26px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--pink-400), var(--pink-600));
+  color: white;
+  box-shadow: var(--shadow-btn);
+  width: 100%;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 20px rgba(255, 92, 152, 0.45);
+}
+
+.btn-ghost {
+  background: var(--pink-100);
+  color: var(--pink-700);
+}
+
+.btn-ghost:hover {
+  background: var(--pink-200);
+}
+
+.btn-link {
+  background: transparent;
+  color: var(--pink-600);
+  padding: 6px 10px;
+  text-decoration: underline;
+}
+
+.muted-link {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 0.9rem;
+}
+
+.helper-text {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-top: -8px;
+  margin-bottom: 16px;
+}
+
+.error-text {
+  color: var(--pink-700);
+  background: var(--pink-100);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--pink-600);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--ink-soft);
+}
+
+/* Alıcı davet akışı (wizard) */
+.wizard-stage {
+  position: relative;
+  min-height: 260px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.wizard-choices {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+  width: 100%;
+  flex: 1;
+}
+
+.option-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.option-card {
+  border: 2px solid var(--pink-100);
+  background: var(--pink-50);
+  border-radius: var(--radius-md);
+  padding: 16px 12px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--ink);
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+
+.option-card:hover {
+  border-color: var(--pink-300);
+}
+
+.option-card.selected {
+  border-color: var(--pink-500);
+  background: var(--pink-100);
+  transform: translateY(-2px);
+}
+
+.option-card .emoji {
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.option-card .range {
+  display: block;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+
+.progress-dots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.progress-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--pink-100);
+}
+
+.progress-dots span.active {
+  background: var(--pink-500);
+}
+
+/* ============================================================
+   Alıcı davet sayfası — ilk ekran (hero)
+   Saydamlık (glass), ışık (aurora glow) ve bol animasyon.
+   ============================================================ */
+
+.hero-scene {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% -10%, rgba(255,255,255,0.35) 0%, transparent 55%),
+    radial-gradient(circle at 12% 18%, rgba(216,180,254,0.55) 0%, transparent 45%),
+    linear-gradient(160deg, #4c1d95 0%, #7e22ce 42%, #2e1065 100%);
+}
+
+/* Yavaşça süzülen, bulanık ışık lekeleri (aurora) — mor/beyaz neon karışımı */
+.aurora {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.6;
+  will-change: transform;
+  z-index: 0;
+}
+.aurora-a {
+  width: 60vmax; height: 60vmax;
+  left: -20vmax; top: -22vmax;
+  background: radial-gradient(circle, #c084fc 0%, transparent 70%);
+  animation: aurora-drift-a 16s ease-in-out infinite;
+}
+.aurora-b {
+  width: 55vmax; height: 55vmax;
+  right: -18vmax; bottom: -20vmax;
+  background: radial-gradient(circle, #ffffff 0%, transparent 70%);
+  opacity: 0.4;
+  animation: aurora-drift-b 19s ease-in-out infinite;
+}
+.aurora-c {
+  width: 42vmax; height: 42vmax;
+  left: 50%; top: 55%;
+  background: radial-gradient(circle, #a855f7 0%, transparent 72%);
+  animation: aurora-drift-c 13s ease-in-out infinite;
+  opacity: 0.45;
+}
+@keyframes aurora-drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(6vmax, 5vmax) scale(1.15); }
+}
+@keyframes aurora-drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-7vmax, -4vmax) scale(1.1); }
+}
+@keyframes aurora-drift-c {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-56%, -46%) scale(1.25); }
+}
+
+/* Twinkle eden parıltılar */
+.sparkles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+.sparkle {
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8);
+  animation-name: twinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Süzülen, ışıltılı kalpler */
+.floating-hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+.floating-heart {
+  position: absolute;
+  bottom: -10%;
+  opacity: 0;
+  filter: drop-shadow(0 0 6px rgba(255, 122, 178, 0.9));
+  animation-name: float-up;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+@keyframes float-up {
+  0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.95; }
+  50% { transform: translateY(-50vh) translateX(10px) rotate(10deg); }
+  90% { opacity: 0.7; }
+  100% { transform: translateY(-100vh) translateX(-6px) rotate(-8deg); opacity: 0; }
+}
+
+/* Cam panel (glassmorphism) — yarı saydam, gri tonlu */
+.glass-panel {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 440px;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 22px 34px;
+  border-radius: 32px;
+  text-align: center;
+  overflow: hidden;
+  font-family: var(--hero-font-body);
+  background: linear-gradient(165deg, rgba(210,210,222,0.28), rgba(140,140,158,0.10));
+  border: 1px solid rgba(255,255,255,0.28);
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.06) inset,
+    0 1px 0 rgba(255,255,255,0.4) inset,
+    0 24px 70px rgba(126, 34, 206, 0.4),
+    0 8px 30px rgba(0,0,0,0.35);
+  animation: panel-rise 0.6s cubic-bezier(.22,1,.36,1) both;
+  transition: background 0.5s ease, border-color 0.5s ease;
+}
+@keyframes panel-rise {
+  from { opacity: 0; transform: translateY(26px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.hero-progress-track {
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 4px;
+  background: rgba(255,255,255,0.12);
+}
+.hero-progress {
+  position: absolute;
+  top: 0; left: 0; height: 4px; width: 12%;
+  background: linear-gradient(90deg, #ff8fc0, #ff2d78, #ffb37b);
+  box-shadow: 0 0 12px rgba(255, 76, 148, 0.9);
+}
+
+.hero-eyebrow {
+  text-align: center;
+  font-family: var(--hero-font-body);
+  font-weight: 600;
+  color: rgba(240, 230, 255, 0.8);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  margin: 0 0 4px;
+  animation: fade-slide-in 0.5s ease 0s both;
+}
+
+/* Karakter ikilisi, ışık halesiyle */
+.hero-characters {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  height: 92px;
+  margin-bottom: 4px;
+}
+.hero-characters::before {
+  content: "";
+  position: absolute;
+  left: 50%; top: 55%;
+  width: 150px; height: 150px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255,130,190,0.55) 0%, transparent 70%);
+  filter: blur(18px);
+  animation: halo-pulse 2.4s ease-in-out infinite;
+  z-index: 0;
+}
+@keyframes halo-pulse {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.12); }
+}
+.hero-character {
+  position: relative;
+  z-index: 1;
+  font-size: 3.6rem;
+  line-height: 1;
+  display: inline-block;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.45));
+}
+.hero-bounce-a { animation: bounce-char 2.4s ease-in-out infinite; }
+.hero-bounce-b { animation: bounce-char 2.4s ease-in-out infinite; animation-delay: 0.3s; }
+@keyframes bounce-char {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+.hero-pop-heart {
+  position: absolute;
+  z-index: 1;
+  top: -8px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 8px rgba(255, 120, 180, 0.9));
+  animation: pop-heart 2.4s ease-in-out infinite;
+}
+@keyframes pop-heart {
+  0%, 20% { opacity: 0; transform: translate(-50%, 6px) scale(0.6); }
+  40% { opacity: 1; transform: translate(-50%, -6px) scale(1.15); }
+  60% { opacity: 1; transform: translate(-50%, -10px) scale(1); }
+  85%, 100% { opacity: 0; transform: translate(-50%, -22px) scale(0.8); }
+}
+
+/* Başlık: parlayan gradyan yazı */
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(0.8rem, 4.9vw, 1.4rem);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  line-height: 1.2;
+  margin: 8px 0 10px;
+  background: linear-gradient(90deg, #f5ebff, #d8b4fe 45%, #f0abfc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 18px rgba(196, 130, 255, 0.6));
+  animation: fade-slide-in 0.5s ease 0.15s both, title-glow 3s ease-in-out infinite 0.6s;
+}
+@keyframes title-glow {
+  0%, 100% { filter: drop-shadow(0 0 14px rgba(196, 130, 255, 0.5)); }
+  50% { filter: drop-shadow(0 0 28px rgba(216, 180, 254, 0.85)); }
+}
+
+.hero-subtitle {
+  text-align: center;
+  margin: 0 0 26px;
+  font-family: var(--hero-font-body);
+  font-weight: 400;
+  color: rgba(245, 240, 255, 0.75);
+  animation: fade-slide-in 0.5s ease 0.3s both;
+}
+
+@keyframes fade-slide-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* "Evet" butonu: parlayan degrade + üzerinden geçen ışık huzmesi */
+.hero-btn-yes {
+  position: relative;
+  overflow: hidden;
+  padding: 13px 22px;
+  font-family: var(--hero-font-body);
+  background: linear-gradient(135deg, #f0abfc, #a855f7 55%, #e9d5ff);
+  color: #2e1065;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.55), 0 0 0 1px rgba(255,255,255,0.3) inset;
+  animation: hero-glow-pulse 2.2s ease-in-out infinite;
+}
+.hero-btn-yes::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -60%;
+  width: 40%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.75), transparent);
+  transform: skewX(-20deg);
+  animation: shimmer-sweep 2.6s ease-in-out infinite;
+}
+@keyframes shimmer-sweep {
+  0% { left: -60%; }
+  55%, 100% { left: 130%; }
+}
+@keyframes hero-glow-pulse {
+  0%, 100% { box-shadow: 0 10px 30px rgba(168, 85, 247, 0.45), 0 0 0 1px rgba(255,255,255,0.3) inset; }
+  50% { box-shadow: 0 10px 44px rgba(192, 132, 252, 0.85), 0 0 0 1px rgba(255,255,255,0.4) inset; }
+}
+/* Büyüme/küçülme oranı .choice-static-btn'deki --scale değişkenine yazılır,
+   ortalama (translateX(-50%)) hiçbir zaman ezilmez — bkz. aşağıdaki blok. */
+.hero-btn-yes:hover { --scale: 1.04; }
+
+/* ============================================================
+   Sihirbaz (wizard) adımları — welcome ile aynı tema: hero-scene
+   arka planı + cam panel, sadece içerik değişiyor.
+   ============================================================ */
+.hero-step-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.15rem, 5.5vw, 1.55rem);
+  text-align: center;
+  line-height: 1.3;
+  margin: 4px 0 24px;
+  background: linear-gradient(90deg, #f5ebff, #d8b4fe 45%, #f0abfc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 14px rgba(196, 130, 255, 0.5));
+  animation: fade-slide-in 0.5s ease 0.15s both;
+}
+
+.hero-option-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.hero-option-card {
+  border: 1px solid rgba(255,255,255,0.22);
+  background: linear-gradient(160deg, rgba(255,255,255,0.16), rgba(255,255,255,0.04));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 16px 12px;
+  text-align: center;
+  font-family: var(--hero-font-body);
+  font-weight: 600;
+  color: #fdf4ff;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  animation: fade-slide-in 0.45s ease both;
+}
+.hero-option-card:nth-child(1) { animation-delay: 0.18s; }
+.hero-option-card:nth-child(2) { animation-delay: 0.26s; }
+.hero-option-card:nth-child(3) { animation-delay: 0.34s; }
+.hero-option-card:nth-child(4) { animation-delay: 0.42s; }
+
+.hero-option-card:hover {
+  border-color: rgba(240, 171, 252, 0.6);
+  background: linear-gradient(160deg, rgba(255,255,255,0.24), rgba(255,255,255,0.06));
+  transform: translateY(-2px);
+}
+
+.hero-option-card.selected {
+  border-color: #f0abfc;
+  background: linear-gradient(160deg, rgba(240,171,252,0.4), rgba(168,85,247,0.2));
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.5);
+  transform: translateY(-2px);
+}
+
+.hero-option-card .hero-option-label {
+  display: block;
+  font-size: 1rem;
+}
+
+.hero-option-card .hero-option-range {
+  display: block;
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 4px;
+}
+
+.hero-option-card .hero-option-emoji {
+  font-size: 1.7rem;
+  display: block;
+  margin-bottom: 6px;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+}
+
+/* Tarih adımı — gerçek ay takvimi, cam temalı günler, seçili gün
+   "Evet" butonuyla aynı parlayan degrade. */
+.hero-calendar {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.hero-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.hero-calendar-month {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #fff;
+  min-width: 132px;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+
+.hero-calendar-nav {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.hero-calendar-nav:hover {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.4);
+}
+
+.hero-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+.hero-calendar-weekdays {
+  margin-bottom: 6px;
+}
+.hero-calendar-weekday {
+  text-align: center;
+  font-family: var(--hero-font-body);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+}
+
+.hero-calendar-day-empty {
+  aspect-ratio: 1;
+}
+
+.hero-calendar-day {
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.07);
+  color: #f5ecff;
+  font-family: var(--hero-font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.15s ease, transform 0.12s ease, box-shadow 0.15s ease;
+}
+.hero-calendar-day:hover:not(:disabled) {
+  background: rgba(255,255,255,0.16);
+  transform: translateY(-1px);
+}
+.hero-calendar-day:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+.hero-calendar-day.today {
+  box-shadow: inset 0 0 0 1px rgba(240,171,252,0.7);
+}
+.hero-calendar-day.selected {
+  background: linear-gradient(135deg, #f0abfc, #a855f7 55%, #e9d5ff);
+  color: #2e1065;
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.55), 0 0 0 1px rgba(255,255,255,0.3) inset;
+  transform: translateY(-1px) scale(1.05);
+}
+
+.hero-calendar-summary {
+  text-align: center;
+  margin: 14px 0 0;
+  font-family: var(--hero-font-body);
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  animation: fade-slide-in 0.35s ease both;
+}
+.hero-calendar-summary strong {
+  color: #fff0f7;
+  font-weight: 700;
+}
+
+/* "Evet!" sonrası kart AYNI boyutta kalır — üzerine pembe dolan bir
+   kutlama katmanı biner (kartın kendi boyutunu asla değiştirmez).
+   Farklı yerlerden beliren noktalar goo (metaball) filtresiyle
+   birleşip kartı pembeye boyuyor, sonra sevinen ayı emojisi çıkıyor. */
+.celebrate-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  overflow: hidden;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.celebrate-goo {
+  position: absolute;
+  inset: 0;
+  filter: url(#celebrate-goo);
+}
+
+.celebrate-dot {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  margin-left: -130px;
+  margin-top: -130px;
+  border-radius: 50%;
+  background: linear-gradient(160deg, #ffa8d6 0%, #ff5c98 55%, #ff2d78 100%);
+  transform: scale(0);
+  animation: celebrate-dot-grow 0.55s cubic-bezier(.25, 1.3, .4, 1) forwards;
+}
+@keyframes celebrate-dot-grow {
+  to { transform: scale(1); }
+}
+
+.celebrate-overlay-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  animation: fade-slide-in 0.4s ease 0.34s forwards;
+}
+
+/* Final teşekkür sayfasında da aynı pembe/ayı kutlama görünümü —
+   burada kart zaten kendi tam boyutunda, katman gerekmiyor. */
+.glass-panel-celebrate {
+  background: linear-gradient(160deg, rgba(255,143,192,0.85), rgba(255,60,130,0.75));
+  border-color: rgba(255,255,255,0.45);
+}
+
+.celebrate-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 0 10px;
+}
+
+/* ============================================================
+   Açılış sayfası (Home) — tam ekran, pembe tonlarda animasyonlu
+   hero + kayan görsel şeridi (framer-motion).
+   ============================================================ */
+.landing-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 24px 200px;
+  background: radial-gradient(ellipse at 50% -10%, rgba(255,255,255,0.45) 0%, transparent 55%),
+    radial-gradient(circle at 15% 20%, rgba(255,214,230,0.65) 0%, transparent 45%),
+    linear-gradient(160deg, #ff8fc0 0%, #ff5c98 45%, #d12868 100%);
+}
+
+.aurora-pink-a {
+  width: 60vmax; height: 60vmax;
+  left: -20vmax; top: -22vmax;
+  background: radial-gradient(circle, #ffffff 0%, transparent 70%);
+  opacity: 0.5;
+  animation: aurora-drift-a 16s ease-in-out infinite;
+}
+.aurora-pink-b {
+  width: 55vmax; height: 55vmax;
+  right: -18vmax; bottom: -20vmax;
+  background: radial-gradient(circle, #ff2d78 0%, transparent 70%);
+  opacity: 0.35;
+  animation: aurora-drift-b 19s ease-in-out infinite;
+}
+.aurora-pink-c {
+  width: 42vmax; height: 42vmax;
+  left: 50%; top: 55%;
+  background: radial-gradient(circle, #ffb37b 0%, transparent 72%);
+  opacity: 0.4;
+  animation: aurora-drift-c 13s ease-in-out infinite;
+}
+
+.landing-hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 720px;
+}
+
+.landing-brand {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  color: #fff;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+  text-shadow: 0 6px 26px rgba(209,40,104,0.55), 0 2px 0 rgba(255,255,255,0.25);
+}
+
+.landing-tagline {
+  margin-bottom: 18px;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-family: var(--hero-font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.landing-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 7vw, 4.2rem);
+  line-height: 1.15;
+  color: #fff;
+  text-shadow: 0 6px 30px rgba(209,40,104,0.5);
+  margin: 0;
+}
+.landing-title-word {
+  display: inline-block;
+}
+
+.landing-description {
+  margin-top: 22px;
+  max-width: 520px;
+  font-family: var(--hero-font-body);
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.6;
+}
+
+.landing-cta {
+  margin-top: 30px;
+}
+
+.landing-marquee-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 34%;
+  z-index: 1;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+.landing-marquee {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+}
+.landing-marquee-item {
+  position: relative;
+  flex-shrink: 0;
+  width: 190px;
+  aspect-ratio: 3 / 4;
+}
+.landing-marquee-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .landing-marquee-item {
+    width: 140px;
+  }
+  .landing-hero {
+    padding-bottom: 160px;
+  }
+}
+
+/* ============================================================
+   Panel (Dashboard) ve benzeri içerik sayfaları — hero-scene ile
+   aynı mor/beyaz neon arka plan, ama sabit yükseklik/ortalama
+   yerine yukarıdan başlayan, içeriğe göre uzayabilen bir düzen.
+   ============================================================ */
+.page-scene {
+  position: relative;
+  min-height: 100vh;
+  padding: 56px 24px 60px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% -10%, rgba(255,255,255,0.35) 0%, transparent 55%),
+    radial-gradient(circle at 12% 18%, rgba(216,180,254,0.55) 0%, transparent 45%),
+    linear-gradient(160deg, #4c1d95 0%, #7e22ce 42%, #2e1065 100%);
+}
+
+.dash-wrap {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Panel üstü — site header'ı yerine geçen, marka adı ortada ve çıkış
+   yap butonu sağda olan tek satır. */
+.dash-topbar {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto 18px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+}
+.dash-topbar-brand {
+  grid-column: 2;
+  justify-self: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.dash-topbar-logout {
+  grid-column: 3;
+  justify-self: end;
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 26px 30px;
+  border-radius: 24px;
+  margin-bottom: 22px;
+  background: linear-gradient(165deg, rgba(210,210,222,0.28), rgba(140,140,158,0.10));
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: 0 16px 50px rgba(126,34,206,0.35), 0 6px 20px rgba(0,0,0,0.25);
+  animation: panel-rise 0.5s cubic-bezier(.22,1,.36,1) both;
+}
+.dash-title {
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  margin: 0 0 4px;
+}
+.dash-subtitle {
+  color: rgba(255,255,255,0.75);
+  font-family: var(--hero-font-body);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.dash-empty {
+  text-align: center;
+  padding: 54px 20px;
+  border-radius: 24px;
+  color: rgba(255,255,255,0.75);
+  font-family: var(--hero-font-body);
+  background: linear-gradient(165deg, rgba(210,210,222,0.22), rgba(140,140,158,0.08));
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(16px);
+}
+
+.dash-list {
+  display: grid;
+  gap: 14px;
+}
+
+.dash-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 20px 26px;
+  border-radius: 20px;
+  background: linear-gradient(165deg, rgba(210,210,222,0.22), rgba(140,140,158,0.08));
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  text-decoration: none;
+  text-align: left;
+  font-family: inherit;
+  font-size: inherit;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  animation: fade-slide-in 0.4s ease both;
+}
+.dash-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(240,171,252,0.5);
+  background: linear-gradient(165deg, rgba(210,210,222,0.3), rgba(140,140,158,0.14));
+}
+
+.dash-item-name {
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  margin: 0 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dash-item-meta {
+  color: rgba(255,255,255,0.65);
+  font-family: var(--hero-font-body);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.dash-status {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--hero-font-body);
+}
+.dash-status.done {
+  background: linear-gradient(135deg, #f0abfc, #a855f7 55%, #e9d5ff);
+  color: #2e1065;
+}
+.dash-status.pending {
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.dash-badge-new {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff8fc0, #ff2d78);
+  color: #fff;
+}
+
+/* Yeni davet oluştur — oluşturulan linkin gösterildiği kutu ve
+   ikincil (Panele dön) buton. */
+.ni-link-box {
+  width: 100%;
+  word-break: break-all;
+  background: rgba(255,255,255,0.1);
+  border: 1.5px dashed rgba(255,255,255,0.4);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  font-family: var(--hero-font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #fff;
+  text-align: center;
+}
+.ni-secondary-btn {
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* ============================================================
+   Panelde tıklanan tamamlanmış davetin cevap kartı — yeni sayfaya
+   gitmeden, aynı ekranda modal olarak açılıyor. Fare hareketiyle
+   hafifçe eğilen 3D kart (framer-motion), arka planı fotoğraf
+   yerine temamızın mor-pembe degradesi.
+   ============================================================ */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(30, 10, 50, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: fade-slide-in 0.25s ease both;
+}
+
+.answer-card-perspective {
+  perspective: 1200px;
+}
+
+.answer-card {
+  position: relative;
+  height: 26rem;
+  width: 20rem;
+  max-width: 88vw;
+  border-radius: 24px;
+  background: transparent;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.answer-card-inner {
+  position: absolute;
+  inset: 16px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: calc(100% - 32px);
+  width: calc(100% - 32px);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.answer-card-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: linear-gradient(160deg, #f0abfc 0%, #a855f7 55%, #7e22ce 100%);
+}
+.answer-card-bg::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.35), transparent 55%),
+    radial-gradient(circle at 80% 85%, rgba(255,255,255,0.2), transparent 50%);
+  animation: aurora-drift-c 14s ease-in-out infinite;
+}
+/* Aktivite emojisi sadece hafif bir filigran — metnin üstüne binmesin */
+.answer-card-bg-emoji {
+  position: absolute;
+  top: -18px;
+  right: -22px;
+  font-size: 8rem;
+  line-height: 1;
+  opacity: 0.2;
+  transform: rotate(14deg);
+}
+
+.answer-card-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 18px;
+  color: #fff;
+}
+
+.answer-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.answer-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin: 0;
+  text-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+.answer-card-subtitle {
+  font-family: var(--hero-font-body);
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  margin: 2px 0 0;
+}
+
+.answer-card-close-btn {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.16);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1;
+}
+.answer-card-close-btn:hover {
+  background: rgba(255,255,255,0.28);
+}
+
+.answer-card-rows {
+  display: grid;
+  gap: 10px;
+  margin: 14px 0;
+}
+.answer-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.18);
+}
+.answer-card-row-label {
+  font-family: var(--hero-font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+.answer-card-row-value {
+  font-family: var(--hero-font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: right;
+}
+
+.answer-card-footer-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  font-family: var(--hero-font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.answer-card-footer-btn:hover {
+  background: rgba(255,255,255,0.24);
+}
+
+/* ============================================================
+   Giriş yap / Üye ol — bölünmüş kart, hero temasıyla aynı
+   arka plan + cam görünüm, yan tarafta renkli vurgu paneli.
+   ============================================================ */
+.auth-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 760px;
+  min-height: 480px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 32px;
+  overflow: hidden;
+  background: linear-gradient(165deg, rgba(210,210,222,0.28), rgba(140,140,158,0.10));
+  border: 1px solid rgba(255,255,255,0.28);
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.06) inset,
+    0 1px 0 rgba(255,255,255,0.4) inset,
+    0 24px 70px rgba(126, 34, 206, 0.4),
+    0 8px 30px rgba(0,0,0,0.35);
+  animation: panel-rise 0.6s cubic-bezier(.22,1,.36,1) both;
+}
+
+.auth-accent {
+  flex: 1 1 300px;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  padding: 44px 32px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(160deg, #f0abfc 0%, #a855f7 55%, #7e22ce 100%);
+}
+.auth-accent::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.35), transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(255,255,255,0.2), transparent 50%);
+  animation: aurora-drift-c 14s ease-in-out infinite;
+  pointer-events: none;
+}
+.auth-brand {
+  position: relative;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.25);
+}
+
+.auth-accent-emoji {
+  position: relative;
+  font-size: 2.6rem;
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.3));
+  animation: bounce-char 2.6s ease-in-out infinite;
+}
+.auth-accent h2 {
+  position: relative;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 4px 0 0;
+  text-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+.auth-accent p {
+  position: relative;
+  color: rgba(255,255,255,0.9);
+  font-family: var(--hero-font-body);
+  font-size: 0.9rem;
+  max-width: 260px;
+  margin: 0;
+}
+
+.auth-form-side {
+  flex: 1 1 320px;
+  min-width: 280px;
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: var(--hero-font-body);
+}
+
+.auth-title {
+  font-family: var(--font-heading);
+  color: #fff;
+  font-size: 1.4rem;
+  margin: 0 0 4px;
+  text-align: left;
+}
+
+.auth-subtitle {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.88rem;
+  text-align: left;
+  margin: 0 0 20px;
+}
+
+.auth-field {
+  margin-bottom: 16px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.auth-field label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+
+.auth-input {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-family: var(--hero-font-body);
+  font-size: 0.95rem;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.auth-input::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+.auth-input:focus {
+  border-color: #f0abfc;
+  background: rgba(255,255,255,0.14);
+}
+
+.auth-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.auth-input-wrap .auth-input {
+  padding-right: 42px;
+}
+.auth-eye-btn {
+  position: absolute;
+  right: 6px;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  padding: 6px;
+  line-height: 1;
+  border-radius: 50%;
+  transition: background 0.15s ease;
+}
+.auth-eye-btn:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+.auth-submit {
+  margin-top: 6px;
+}
+
+.auth-muted-link {
+  text-align: center;
+  margin: 16px 0 0;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  font-family: var(--hero-font-body);
+}
+.auth-muted-link a {
+  color: #f0abfc;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.auth-error-text {
+  background: rgba(255,90,120,0.16);
+  border: 1px solid rgba(255,90,120,0.4);
+  color: #ffdbe4;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 640px) {
+  .auth-accent {
+    padding: 32px 24px;
+  }
+  .auth-form-side {
+    padding: 36px 26px;
+  }
+}
+
+/* Final sayfadaki "sen de davet etmek ister misin?" butonu — pembe
+   kartın üzerinde iyi kontrast için cam/beyaz görünümde. */
+.celebrate-cta {
+  margin-top: 18px;
+  background: rgba(255,255,255,0.92);
+  color: #d12868;
+  animation: none;
+  box-shadow: 0 10px 26px rgba(80, 20, 50, 0.35);
+}
+.celebrate-cta::after {
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.9), transparent);
+}
+.celebrate-cta:hover {
+  --scale: 1.03;
+}
+
+/* Final sayfada "sabırsızlanıyoruz" yazısının altında zıplayan kalpler */
+.impatient-hearts {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+.impatient-hearts span {
+  font-size: 1.3rem;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+  animation: impatient-bounce 1s ease-in-out infinite;
+}
+.impatient-hearts span:nth-child(2) { animation-delay: 0.15s; }
+.impatient-hearts span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes impatient-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.2); }
+}
+
+.celebrate-emoji {
+  font-size: 4.6rem;
+  line-height: 1;
+  filter: drop-shadow(0 10px 26px rgba(0,0,0,0.35));
+  animation: celebrate-pop 0.6s cubic-bezier(.34,1.56,.64,1) both,
+    celebrate-wiggle 1.3s ease-in-out 0.6s infinite;
+}
+
+.celebrate-text {
+  font-family: var(--font-heading);
+  color: #fff;
+  font-size: 1.35rem;
+  text-align: center;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  margin: 4px 0 0;
+  animation: fade-slide-in 0.5s ease 0.15s both;
+}
+
+.celebrate-subtext {
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  font-family: var(--hero-font-body);
+  margin: 0;
+  animation: fade-slide-in 0.5s ease 0.28s both;
+}
+
+@keyframes celebrate-pop {
+  0% { transform: scale(0.3) rotate(-10deg); opacity: 0; }
+  60% { transform: scale(1.18) rotate(6deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); }
+}
+@keyframes celebrate-wiggle {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
+}
+
+/* "Devam et" gibi tam genişlikte cam-tema birincil butonlar; parlayan
+   degrade + ışık huzmesi .hero-btn-yes ile aynı, sadece tam genişlik
+   ve disabled durumu eklendi. */
+.hero-btn-wide {
+  width: 100%;
+  display: block;
+}
+.hero-btn-wide:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  animation: none;
+  box-shadow: 0 6px 16px rgba(80, 40, 110, 0.3);
+}
+.hero-btn-wide:disabled::after {
+  display: none;
+}
+
+/* Kaçan "Hayır" butonu: cam görünümü — artık tüm hero-scene içinde
+   dolaştığı için cam panelin üstünden geçebilmesi lazım. */
+.dodge-glass {
+  padding: 10px 18px;
+  font-size: 0.92rem;
+  background: rgba(255,255,255,0.12);
+  color: #fff0f7;
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(6px);
+  z-index: 5;
+}
+.dodge-glass:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.choice-zone {
+  position: relative;
+  min-height: 150px;
+  width: 100%;
+  margin-top: 6px;
+  animation: fade-slide-in 0.5s ease 0.45s both;
+}
+
+.shake-on-dodge {
+  animation: dodge-shake 0.4s ease;
+}
+
+@keyframes dodge-shake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  15% { transform: translate(-4px, 2px) rotate(-7deg); }
+  30% { transform: translate(4px, -2px) rotate(7deg); }
+  45% { transform: translate(-3px, 2px) rotate(-5deg); }
+  60% { transform: translate(3px, -2px) rotate(5deg); }
+  75% { transform: translate(-2px, 1px) rotate(-2deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* "Evet" butonu HER KOŞULDA (hover, active, animasyon...) yatayda ortalı ve
+   sabit kalsın diye ölçek değişimini transform'un kendisine değil, ayrı bir
+   --scale değişkenine yazıyoruz; ortalama (translateX(-50%)) asla ezilmez. */
+.choice-static-btn {
+  position: absolute;
+  left: 50%;
+  top: 6px;
+  width: auto;
+  white-space: nowrap;
+  --scale: 1;
+  transform: translateX(-50%) scale(var(--scale));
+}
+
+.choice-static-btn:active {
+  --scale: 0.97;
+}

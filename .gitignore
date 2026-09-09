@@ -1,0 +1,19 @@
+# .NET
+bin/
+obj/
+*.user
+.vs/
+
+# Node / Vite
+node_modules/
+frontend/dist/
+
+# Ortam / sırlar
+.env
+.env.*
+!frontend/.env.production
+**/appsettings.Development.json
+
+# OS
+Thumbs.db
+.DS_Store
