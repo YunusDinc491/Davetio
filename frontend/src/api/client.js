@@ -55,14 +55,6 @@ export async function apiFetch(path, { method = "GET", body, auth = false } = {}
     err.status = res.status;
     throw err;
   }
-  if (!res.ok) {
-    const message =
-      (data && typeof data === "object" && data.message) ||
-      (typeof data === "string" && data) ||
-      "Bir hata oluştu.";
-    const err = new Error(message);
-    err.status = res.status;
-    throw err;
-  }
+
   return data;
 }
